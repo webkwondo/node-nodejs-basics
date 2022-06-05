@@ -17,4 +17,4 @@ export const spawnChildProcess = async (args) => {
   });
 };
 
-spawnChildProcess(['a1', 'a2', 'a3']);
+spawnChildProcess(process.argv.slice(2));
