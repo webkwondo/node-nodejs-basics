@@ -6,7 +6,7 @@ export const parseArgs = () => {
     const propName = args[i];
     let val = args[i + 1];
     if (propName.startsWith('--') && val && !val.startsWith('--')) {
-      const str = propName + ' is ' + val;
+      const str = propName.slice(2) + ' is ' + val;
       result = (result) ? result + ', ' + str : result + str;
     }
   }
