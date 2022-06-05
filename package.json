@@ -10,8 +10,9 @@
     "fs:delete": "node src/fs/delete.js",
     "fs:list": "node src/fs/list.js",
     "fs:read": "node src/fs/read.js",
-    "cli:env": "node src/cli/env.js",
-    "cli:args": "node src/cli/args.js",
+    "about:env": "echo 'If you're on Mac or Linux run the command for cli:env manually: RSS_name1=value1 RSS_name2=value2 node src/cli/env.js'",
+    "cli:env": "set RSS_name1=value1&& set RSS_name2=value2&& node src/cli/env.js",
+    "cli:args": "node src/cli/args.js --propName value --prop2Name value2",
     "modules": "node src/modules/cjsToEsm.mjs",
     "hash": "node src/hash/calcHash.js",
     "streams:read": "node src/streams/read.js",
@@ -20,7 +21,7 @@
     "zip:compress": "node src/zip/compress.js",
     "zip:decompress": "node src/zip/decompress.js",
     "wt": "node src/wt/main.js",
-    "cp": "node src/cp/cp.js"
+    "cp": "node src/cp/cp.js --a1 a2 a3"
   },
   "repository": {
     "type": "git",
