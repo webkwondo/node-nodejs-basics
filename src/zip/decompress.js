@@ -1,7 +1,7 @@
 import { createGunzip } from 'zlib';
 import { promisify } from 'util';
 import { pipeline } from 'stream';
-import { unlink } from 'fs/promises';
+import { stat, unlink } from 'fs/promises';
 import { createReadStream, createWriteStream } from 'fs';
 import { getDirName, join } from '../fs/getPath.js';
 
@@ -23,10 +23,11 @@ export const decompress = async () => {
   };
 
   try {
+    await stat(archivePath);
     await doGunzip(archivePath, filePath);
     await unlink(archivePath);
   } catch (error) {
-    console.error('Operation failed: ', error);
+    console.error('Operation failed:\r\n', error);
     process.exitCode = 1;
   }
 };

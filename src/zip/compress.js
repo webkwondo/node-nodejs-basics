@@ -1,7 +1,7 @@
 import { createGzip } from 'zlib';
 import { pipeline } from 'stream';
 import { promisify } from 'util';
-import { unlink } from 'fs/promises';
+import { stat, unlink } from 'fs/promises';
 import { createReadStream, createWriteStream } from 'fs';
 import { getDirName, join } from '../fs/getPath.js';
 
@@ -23,10 +23,11 @@ export const compress = async () => {
   };
 
   try {
+    await stat(filePath);
     await doGzip(filePath, archivePath);
     await unlink(filePath);
   } catch (error) {
-    console.error('Operation failed: ', error);
+    console.error('Operation failed:\r\n', error);
     process.exitCode = 1;
   }
 };
