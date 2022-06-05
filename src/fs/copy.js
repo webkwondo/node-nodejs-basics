@@ -18,12 +18,11 @@ export const copy = async () => {
   };
 
   const copyDir = async (srcDirPath, destDirPath) => {
-    await createDir(destDirPath);
-
     let direntsArr = [];
 
     try {
       direntsArr = await readdir(srcDirPath, { withFileTypes: true });
+      await createDir(destDirPath);
     } catch (error) {
       throw new Error('FS operation failed');
     }
