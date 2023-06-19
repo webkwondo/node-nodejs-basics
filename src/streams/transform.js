@@ -15,4 +15,4 @@ export const transform = async () => {
   process.stdin.pipe(reverseTr).pipe(process.stdout);
 };
 
-transform();
+await transform();

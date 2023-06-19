@@ -26,4 +26,4 @@ export const list = async () => {
   console.log(paths);
 };
 
-list();
+await list();

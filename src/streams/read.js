@@ -13,4 +13,4 @@ export const read = async () => {
   readableStream.pipe(process.stdout);
 };
 
-read();
+await read();

@@ -32,4 +32,4 @@ export const decompress = async () => {
   }
 };
 
-decompress();
+await decompress();

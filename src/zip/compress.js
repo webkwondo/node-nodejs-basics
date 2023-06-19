@@ -32,4 +32,4 @@ export const compress = async () => {
   }
 };
 
-compress();
+await compress();

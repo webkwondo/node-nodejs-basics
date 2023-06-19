@@ -20,4 +20,4 @@ export const calculateHash = async () => {
   return hex;
 };
 
-calculateHash();
+await calculateHash();
