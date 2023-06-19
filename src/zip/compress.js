@@ -25,7 +25,7 @@ export const compress = async () => {
   try {
     await stat(filePath);
     await doGzip(filePath, archivePath);
-    await unlink(filePath);
+    // await unlink(filePath);
   } catch (error) {
     console.error('Operation failed:\r\n', error);
     process.exitCode = 1;

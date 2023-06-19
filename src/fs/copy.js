@@ -52,4 +52,4 @@ export const copy = async () => {
     // .catch((e) => console.error(e));
 };
 
-copy();
+await copy();

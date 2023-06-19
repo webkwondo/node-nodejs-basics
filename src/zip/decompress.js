@@ -25,7 +25,7 @@ export const decompress = async () => {
   try {
     await stat(archivePath);
     await doGunzip(archivePath, filePath);
-    await unlink(archivePath);
+    // await unlink(archivePath);
   } catch (error) {
     console.error('Operation failed:\r\n', error);
     process.exitCode = 1;
